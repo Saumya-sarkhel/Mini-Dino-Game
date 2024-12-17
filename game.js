@@ -136,6 +136,14 @@ document.addEventListener('keydown', (e) => {
     }
 });
 
+// Add touch event listener for mobile devices
+canvas.addEventListener('touchstart', (e) => {
+    e.preventDefault(); // Prevent default touch behavior
+    if (dino.y === 206 && gameStarted) {
+        isJumping = true;
+    }
+}, { passive: false });
+
 startButton.addEventListener('click', () => {
     gameStarted = true;
     startButton.style.display = 'none';
